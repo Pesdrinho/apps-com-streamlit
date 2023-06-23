@@ -1,7 +1,8 @@
+%pip install joblib
+
 import streamlit as st
 import pandas as pd
 import joblib
-import pickle
 
 # Carregar o modelo de Machine Learning
 analise_credito = joblib.load(r"C:\Users\Pepson\Desktop\analise_credito.pkl")
