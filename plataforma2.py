@@ -20,9 +20,13 @@ target = df['Y']
 # df['Ano'] = scaler.fit_transform(df[['Ano']].values)
 
 X_train, X_test, y_train, y_test = train_test_split(features, target, test_size=0.2, random_state=42)
-# Adapte para o seu conjunto de dados, escolhendo as features e o target
+
 features = df[['Ano', 'X1', 'X2', 'X3', 'X4', 'X5', 'X6', 'X7']]
 target = df['Y']
+
+# melhores parâmetros para cada modelo
+lda_best_params = {'param0': 0.5512338032847833, 'param1': 0.6652880993776471, 'param2': 0.1599488915094367, 'param3': 0.7661040636049521}
+qda_best_params = {'param0': 0.5675430372376934, 'param1': 0.4280759340305544, 'param2': 0.46712758465432114, 'param3': 0.971130269611102}
 
 X_train, X_test, y_train, y_test = train_test_split(features, target, test_size=0.2, random_state=42)
 modelo_lda = LinearDiscriminantAnalysis().fit(X_train, y_train)
@@ -79,11 +83,13 @@ if st.sidebar.button('Realizar Predições e Avaliar Modelos'):
     st.write(f'Predição: {previsao_lda[0]}')
     if probabilidade_lda is not None:
         st.write(f'Probabilidade de Acréscimo: {probabilidade_lda[0][1]:.4f}')
+        st.write(f'Melhores parâmetros: {lda_best_params[0][1]:.4f}')
 
     st.write('### QDA')
     st.write(f'Predição: {previsao_qda[0]}')
     if probabilidade_qda is not None:
         st.write(f'Probabilidade de Acréscimo: {probabilidade_qda[0][1]:.4f}')
+        st.write(f'Melhores parâmetros: {qda_best_params[0][1]:.4f}')
 
     st.write('### Naive Bayes')
     st.write(f'Predição: {previsao_nb[0]}')
