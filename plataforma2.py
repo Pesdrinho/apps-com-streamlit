@@ -83,13 +83,13 @@ if st.sidebar.button('Realizar Predições e Avaliar Modelos'):
     st.write(f'Predição: {previsao_lda[0]}')
     if probabilidade_lda is not None:
         st.write(f'Probabilidade de Acréscimo: {probabilidade_lda[0][1]:.4f}')
-        st.write(f'Melhores parâmetros: {lda_best_params[0][1]:.4f}')
+        st.write(f'Melhores parâmetros: {lda_best_params}')
 
     st.write('### QDA')
     st.write(f'Predição: {previsao_qda[0]}')
     if probabilidade_qda is not None:
         st.write(f'Probabilidade de Acréscimo: {probabilidade_qda[0][1]:.4f}')
-        st.write(f'Melhores parâmetros: {qda_best_params[0][1]:.4f}')
+        st.write(f'Melhores parâmetros: {qda_best_params}')
 
     st.write('### Naive Bayes')
     st.write(f'Predição: {previsao_nb[0]}')
