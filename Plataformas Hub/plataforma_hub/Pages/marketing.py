@@ -1,7 +1,10 @@
 import streamlit as st
 from openai import OpenAI
+import dotenv
 
-client = OpenAI(api_key='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')
+load_dotenv()
+
+client = OpenAI(api_key=os.environ(OPENAI_API_KEY))
 GPT_MODEL = "gpt-3.5-turbo"
 
 def generate_insights(mensagem):

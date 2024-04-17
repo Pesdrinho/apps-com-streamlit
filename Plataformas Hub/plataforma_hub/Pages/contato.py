@@ -3,7 +3,7 @@ import requests
 
 def send_message(numero):
     # Substitua os valores apropriados aqui
-    access_token = 'EAATonZCKARZAIBO5rLVzTKo3qnD8KEN3ygEgaQj6Yb2fSutAjdki57xQsPJNKLSKRrvwZBVZAj74Voi3iNaZA5VGiWsYssWQeWecKMHt3eoK2EPQSpMse005JINJpVvEjgIUyDS0ZCCUOu51XUlGx2p66GsxfJr7iJjOlb4qwOx1tiGHZAG2tZA5Rg98MhFyV9it3fVSSRrJdDfHFUFAX8xnQ1j6sOELTXNuv1wn19SkTVAZD'
+    access_token = os.environ(ACESS_TOKEN)
     recipient_number = numero
 
     # Monta a URL e os dados para a chamada cURL

@@ -2,9 +2,12 @@
 
 import streamlit as st
 from openai import OpenAI
+import dotenv
+
+load_dotenv()
 
 # Substitua 'YourKey' pela sua chave de API real
-client = OpenAI(api_key='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')
+client = OpenAI(api_key=os.environ(OPENAI_API_KEY))
 GPT_MODEL = "gpt-3.5-turbo"  # Alterado para o modelo GPT-4
 
 def enviar_mensagem(mensagem, lista_mensagens):
